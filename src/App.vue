@@ -1,6 +1,8 @@
 <template>
-  <img id="homeFace" alt="Vue logo" src="./assets/Jesse_Waddell.jpg">
-  <HelloWorld msg="I'm here to punch ya baby"/>
+  <div class="img-container">
+    <img id="homeFace" alt="Vue logo" src="./assets/Jesse_Waddell.jpg">
+  </div>
+  <HelloWorld msg="Jesse M. Waddell"/>
 </template>
 
 <script>
@@ -22,6 +24,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.img-container {
+  background-color: black;
+  width: 100%;
 }
 
 #homeFace {
