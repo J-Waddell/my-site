@@ -1,17 +1,53 @@
 <template>
-  <div class="img-container">
-    <img id="homeFace" alt="Vue logo" src="./assets/Jesse_Waddell.jpg">
+<nav class="relative flex flex-wrap items-center justify-between px-2 py-3 bg-slate-500 mb-3">
+  <div class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+    <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-start">
+      <a class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white" href="#pablo">
+        Jesse.
+      </a>
+      <button class="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button" v-on:click="toggleNavbar()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    <div v-bind:class="{'hidden': !showMenu, 'flex': showMenu}" class="lg:flex lg:flex-grow items-center">
+      <ul class="flex flex-col lg:flex-row list-none justify-center">
+        <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+            <i class="fab fa-facebook-square text-lg leading-lg text-white opacity-75" /><span class="ml-2">Share</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+            <i class="fab fa-twitter text-lg leading-lg text-white opacity-75" /><span class="ml-2">Tweet</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75" href="#pablo">
+            <i class="fab fa-pinterest text-lg leading-lg text-white opacity-75" /><span class="ml-2">Pin</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <HelloWorld msg="Jesse M. Waddell"/>
+</nav>
+
+  <div class="img-container">
+    <img id="homeFace" alt="Vue logo" src="./assets/Subject.png">
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: "slate-navbar",
+  data() {
+    return {
+      showMenu: false
+    }
+  },
+  methods: {
+    toggleNavbar: function(){
+      this.showMenu = !this.showMenu;
+    }
   }
 }
 </script>
@@ -23,16 +59,23 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 .img-container {
-  background-color: black;
   width: 100%;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.418);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.img-container img {
+  width: 150px;
+  height: 150px;
+}
+  
 #homeFace {
-  width: 25%;
-  border-radius: 3em;
+  width: auto;
 }
 </style>
